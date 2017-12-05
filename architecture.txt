@@ -6,7 +6,7 @@ Key things to be noted:
 
 All the models are in the models package
 
-Q1:
+
 Record - POJO to model the data
 FourSquareParsingController - code for handling the request to get the data by making a API call is put in here
 RecordParsingController - code for handling the request to get the data by parsing the file is put in here
@@ -30,4 +30,4 @@ Constants - constant used across the application
 Some of the config stuff used:
 HikariCP
 DB datasource - default
-bean -ORM
+Ebean -ORM
