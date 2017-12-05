@@ -1,0 +1,33 @@
+Reference Document
+
+I have used play framework in java for delivering the solution to questions in the assessment test.
+
+Key things to be noted:
+
+All the models are in the models package
+
+Q1:
+Record - POJO to model the data
+FourSquareParsingController - code for handling the request to get the data by making a API call is put in here
+RecordParsingController - code for handling the request to get the data by parsing the file is put in here
+RecordController  - code for getting the Records from DB is put in this controller
+
+
+
+TrasformToCustomResp - Interface for transforming the JSON that we get from foursquare API to CustomResponse format
+
+There are two implementation classes for the TrasformToCustomResp interface. We can dependency inject based on type we want to use:
+ConvertToCustomResp - it creates POJO for foursquare Api response and create Max2 Specific response (useful for future implementation if in cases we want to parse multiple things other than names of the places)
+ParseNodeDirectly - it uses ObjectMapper to parse without creating the POJO (Useful for current scenario as we don’t have to create POJO for whole foursquare API response)
+
+Util Classes
+CommonUtil  - All the common methods for making API calls used by Controllers is put in here
+ParsingUtil - All the common methods that we use for parsing the file in the Controller action methods is put in here.
+
+DatabaseExecutionContext - custom Execution context to perform DB operations
+Constants - constant used across the application
+
+Some of the config stuff used:
+HikariCP
+DB datasource - default
+bean -ORM
